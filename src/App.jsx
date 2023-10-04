@@ -3,6 +3,7 @@ import { Header } from "./components/Header";
 import { Textbox } from "./components/Textbox";
 import { register } from "./Data/register";
 import { Dropdown } from "./components/Dropdown";
+import { getData, getDataByAxios } from "./components/Services";
 
 
 const App = () => {
@@ -14,6 +15,8 @@ const App = () => {
     setProfile({...content})
   };
 
+  getData("https://restcountries.com/v2/all");
+  getDataByAxios("https://restcountries.com/v2/all");
   const countryList = [{
     value:"IN",
     text:"India"
