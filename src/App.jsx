@@ -4,6 +4,8 @@ import { Textbox } from "./components/Textbox";
 import { register } from "./Data/register";
 import { Dropdown } from "./components/Dropdown";
 import { getData, getDataByAxios } from "./components/Services";
+import { RadioButton } from "./components/RadioButton";
+import { Checkbox } from "./components/Checkbox";
 
 
 const App = () => {
@@ -43,6 +45,19 @@ const App = () => {
   }
   ] */
 
+  const genderList = [{
+    value:"M",
+    text:"Male"
+  },
+  {
+    value:"F",
+    text:"Female"
+
+  },{
+    value:"DND",
+    text:"Do not disclose"
+  }]
+
   return (
     <div>
       <Header companyName={companyName}></Header>
@@ -54,6 +69,8 @@ const App = () => {
           <button className="btn btn-primary col-md-3" onClick={e => {
             console.log(profile)
           }}>Register</button>
+          <RadioButton radioButtonconfig={register.Gender} handleChange={handleChange} collection={genderList}></RadioButton>
+          <Checkbox checkboxConfig={register.Agree} handleChange={handleChange}></Checkbox>
           {JSON.stringify(profile)}
         </div>
       </div>
