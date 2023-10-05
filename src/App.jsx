@@ -70,7 +70,7 @@ const App = () => {
             console.log(profile)
           }}>Register</button>
           <RadioButton radioButtonconfig={register.Gender} handleChange={handleChange} collection={genderList}></RadioButton>
-          <Checkbox checkboxConfig={register.Agree} handleChange={handleChange}></Checkbox>
+          
           {JSON.stringify(profile)}
         </div>
       </div>
